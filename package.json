@@ -1,0 +1,10 @@
+{
+  "name": "makesense-local-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A static MakeSense website ready for GitHub and Vercel free tier.",
+  "scripts": {
+    "dev": "python3 -m http.server 4173",
+    "start": "python3 -m http.server 4173"
+  }
+}
