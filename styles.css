@@ -169,8 +169,8 @@ dd {
 }
 
 .nav > a:not(.pill):hover,
-.nav > a.is-active,
-.nav > a[aria-current="page"] {
+.nav > a:not(.pill).is-active,
+.nav > a:not(.pill)[aria-current="page"] {
   color: var(--sage);
 }
 
@@ -200,6 +200,11 @@ dd {
 .pill-dark {
   color: var(--paper);
   background: var(--ink);
+}
+
+.pill-dark.is-active,
+.pill-dark[aria-current="page"] {
+  color: var(--paper);
 }
 
 .pill-dark:hover {
@@ -681,7 +686,11 @@ h3 {
 
   .nav .pill {
     width: 100%;
-    min-height: 52px;
+    min-height: 112px;
+    padding: 16px 24px;
+    color: var(--paper);
+    font-size: 28px;
+    font-weight: 600;
   }
 
   .brand {
@@ -734,7 +743,9 @@ h3 {
   }
 
   .nav .pill {
+    min-height: 88px;
     padding-inline: 18px;
+    font-size: 22px;
   }
 
   .kicker {
