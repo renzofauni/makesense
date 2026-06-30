@@ -28,7 +28,12 @@
       <a class="brand" href="index.html" aria-label="MakeSense home">
         <img src="assets/makesense-logo.svg" alt="MakeSense" />
       </a>
-      <nav class="nav" aria-label="Primary navigation">
+      <input class="menu-checkbox" type="checkbox" id="menu-toggle" aria-label="Toggle navigation" />
+      <label class="menu-toggle" for="menu-toggle" aria-controls="primary-navigation">
+        <span class="menu-toggle-lines" aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </label>
+      <nav class="nav" id="primary-navigation" aria-label="Primary navigation">
         <a href="index.html" data-nav-page="home">Home</a>
         <a href="services.html" data-nav-page="services">Services</a>
         <a class="pill pill-dark" href="contact.html" data-nav-page="contact">Get in Touch <span aria-hidden="true">-></span></a>
