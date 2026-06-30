@@ -530,8 +530,7 @@ h3 {
 
   .hero-art,
   .section-art {
-    min-height: 190px;
-    order: -1;
+    display: none;
   }
 
   .hero-art .asterisk-sage,
@@ -610,7 +609,7 @@ h3 {
   }
 
   .approach-art {
-    min-height: 210px;
+    display: none;
   }
 
   .approach-art .asterisk-sage {
