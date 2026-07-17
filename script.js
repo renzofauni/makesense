@@ -20,24 +20,20 @@ nav?.addEventListener("click", (event) => {
 document.querySelectorAll("[data-copy-email]").forEach((button) => {
   button.addEventListener("click", async () => {
     const email = button.dataset.copyEmail;
-    const status = button.parentElement?.querySelector(".copy-status");
-
     try {
       await navigator.clipboard.writeText(email);
-      button.textContent = "Email Copied";
-      if (status) {
-        status.textContent = "Copied to clipboard.";
+      const label = button.querySelector(".copy-label");
+      if (label) {
+        label.textContent = "Email Copied";
       }
     } catch {
-      if (status) {
-        status.textContent = email;
-      }
+      window.location.href = `mailto:${email}`;
     }
 
     window.setTimeout(() => {
-      button.textContent = "Copy Email";
-      if (status) {
-        status.textContent = "";
+      const label = button.querySelector(".copy-label");
+      if (label) {
+        label.textContent = email;
       }
     }, 2500);
   });
