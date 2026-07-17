@@ -75,7 +75,18 @@ dd {
   gap: 24px;
   min-height: 122px;
   padding: 32px var(--header-pad);
-  background: var(--paper);
+  background: transparent;
+  transition:
+    background-color 180ms ease,
+    box-shadow 180ms ease,
+    backdrop-filter 180ms ease;
+}
+
+.site-header.is-frosted {
+  background: rgba(243, 248, 247, 0.72);
+  box-shadow: 0 1px 0 rgba(203, 211, 210, 0.58);
+  backdrop-filter: blur(18px) saturate(1.2);
+  -webkit-backdrop-filter: blur(18px) saturate(1.2);
 }
 
 .brand {

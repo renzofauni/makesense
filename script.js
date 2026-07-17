@@ -1,6 +1,14 @@
 const currentPage = document.body.dataset.page;
+const header = document.querySelector(".site-header");
 const nav = document.querySelector(".nav");
 const menuCheckbox = document.querySelector(".menu-checkbox");
+
+const syncHeaderFrost = () => {
+  header?.classList.toggle("is-frosted", window.scrollY > 8);
+};
+
+syncHeaderFrost();
+window.addEventListener("scroll", syncHeaderFrost, { passive: true });
 
 document.querySelectorAll("[data-nav-page]").forEach((link) => {
   if (link.dataset.navPage === currentPage) {
