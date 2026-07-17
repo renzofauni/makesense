@@ -21,7 +21,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="styles.css?v=20260701-title-consistency" />
+    <link rel="stylesheet" href="styles.css?v=20260717-email-contact" />
   </head>
   <body data-page="contact">
     <header class="site-header">
@@ -47,25 +47,17 @@
           <h1 id="contact-title">Tell us about your project.</h1>
         </div>
 
-        <form class="contact-form" action="mailto:lets@makesense.co.nz" method="post" enctype="text/plain">
-          <label class="field">
-            <span>Your name *</span>
-            <input name="name" type="text" placeholder="First name" required />
-          </label>
-          <label class="field">
-            <span>Email *</span>
-            <input name="email" type="email" placeholder="your@email.com" required />
-          </label>
-          <label class="field">
-            <span>How can we help? *</span>
-            <textarea
-              name="message"
-              placeholder="What are you building, what challenges are you facing, or what outcomes are you hoping to achieve?"
-              required
-            ></textarea>
-          </label>
-          <button class="pill pill-dark pill-large submit-button" type="submit">Send Enquiry</button>
-        </form>
+        <div class="email-panel" aria-labelledby="email-title">
+          <p class="email-label" id="email-title">Email us directly</p>
+          <a class="email-address" href="mailto:lets@makesense.co.nz">lets@makesense.co.nz</a>
+          <p class="email-note">
+            Send through your project, website, product, or accessibility challenge.
+          </p>
+          <button class="pill pill-dark pill-large copy-email" type="button" data-copy-email="lets@makesense.co.nz">
+            Copy Email
+          </button>
+          <p class="copy-status" aria-live="polite"></p>
+        </div>
       </section>
     </main>
 
@@ -75,6 +67,6 @@
       <p>proudly based in aotearoa new zealand</p>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260717-email-contact"></script>
   </body>
 </html>

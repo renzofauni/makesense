@@ -547,7 +547,7 @@ h3 {
 }
 
 .return-link,
-.field span {
+.email-label {
   color: var(--muted);
   font-family: var(--mono);
   font-size: 11px;
@@ -565,54 +565,44 @@ h3 {
   color: var(--sage);
 }
 
-.contact-form {
+.email-panel {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  align-items: flex-start;
+  gap: 22px;
   width: 100%;
+  padding-top: 12px;
 }
 
-.field {
-  display: grid;
-  gap: 12px;
+.email-address {
+  color: var(--ink);
+  font-family: var(--headline);
+  font-size: clamp(2.2rem, 4.4vw, 4rem);
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  line-height: 0.98;
+  overflow-wrap: anywhere;
 }
 
-.field input,
-.field textarea {
-  width: 100%;
-  border: 1px solid var(--line);
-  border-radius: 8px;
+.email-address:hover {
+  color: var(--sage);
+}
+
+.email-note {
+  max-width: 420px;
   color: var(--text);
-  background: var(--paper);
-  font: 400 16px/1.5 var(--display);
+  font-size: 18px;
+  line-height: 1.6;
 }
 
-.field input {
-  min-height: 48px;
-  padding: 11px 16px;
-}
-
-.field textarea {
-  min-height: 140px;
-  resize: vertical;
-  padding: 13px 16px;
-}
-
-.field input::placeholder,
-.field textarea::placeholder {
+.copy-status {
+  min-height: 20px;
   color: var(--muted);
-  opacity: 1;
+  font-size: 14px;
+  line-height: 1.4;
 }
 
-.field input:focus,
-.field textarea:focus {
-  outline: 2px solid rgba(82, 122, 122, 0.32);
-  outline-offset: 2px;
-  border-color: var(--sage);
-}
-
-.submit-button {
-  width: 100%;
+.copy-email {
   border: 0;
   cursor: pointer;
   font-family: var(--display);
