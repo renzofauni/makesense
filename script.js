@@ -10,7 +10,6 @@ const motionTargets = [
   ".services > .section-intro h1",
   ".lead",
   ".actions",
-  ".hero-facts",
   ".service-row",
   ".approach-art",
   ".approach h2",

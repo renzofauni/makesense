@@ -10,7 +10,7 @@
   --line: #cbd3d2;
   --white: #ffffff;
   --page-pad: clamp(20px, 6vw, 100px);
-  --header-pad: clamp(20px, 4vw, 56px);
+  --header-pad: var(--page-pad);
   --page-title-size: clamp(5rem, 7.2vw, 6.8rem);
   --display: "Sora", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --headline: "Cal Sans", var(--display);
@@ -421,11 +421,12 @@ dd {
 
 .hero-home .actions {
   margin-top: clamp(22px, 3vh, 32px);
+  margin-bottom: clamp(28px, 4vh, 44px);
 }
 
 .hero-home .hero-facts {
-  width: calc(100% + 36px);
-  margin-top: clamp(34px, 4.5vh, 52px);
+  width: 100%;
+  margin-top: auto;
 }
 
 .asterisk {
@@ -724,10 +725,11 @@ h3 {
 
   .hero-home .actions {
     margin-top: 24px;
+    margin-bottom: 36px;
   }
 
   .hero-home .hero-facts {
-    margin-top: 36px;
+    margin-top: auto;
   }
 }
 
@@ -787,6 +789,7 @@ h3 {
 
   .hero-home .actions {
     margin-top: 36px;
+    margin-bottom: 0;
   }
 
   .hero-facts,
