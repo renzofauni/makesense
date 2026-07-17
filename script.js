@@ -50,30 +50,20 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   revealItems.forEach((item) => revealObserver.observe(item));
 
   document.querySelectorAll(".asterisk").forEach((asterisk) => {
+    const setSpinSpeed = (speed) => {
+      asterisk.getAnimations().forEach((animation) => {
+        if (animation.animationName?.startsWith("asterisk-spin")) {
+          animation.updatePlaybackRate(speed);
+        }
+      });
+    };
+
     asterisk.addEventListener("pointerenter", () => {
-      if (asterisk.dataset.spinBurst === "true") {
-        return;
-      }
+      setSpinSpeed(12);
+    });
 
-      asterisk.dataset.spinBurst = "true";
-      const burst = asterisk.animate(
-        [
-          { rotate: "0deg", offset: 0 },
-          { rotate: "96deg", offset: 0.62 },
-          { rotate: "140deg", offset: 1 },
-        ],
-        {
-          duration: 1600,
-          easing: "cubic-bezier(0.16, 1, 0.3, 1)",
-        },
-      );
-
-      burst.addEventListener("finish", () => {
-        delete asterisk.dataset.spinBurst;
-      });
-      burst.addEventListener("cancel", () => {
-        delete asterisk.dataset.spinBurst;
-      });
+    asterisk.addEventListener("pointerleave", () => {
+      setSpinSpeed(1);
     });
   });
 }
