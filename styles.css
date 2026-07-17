@@ -11,6 +11,7 @@
   --white: #ffffff;
   --page-pad: clamp(20px, 6vw, 100px);
   --header-pad: clamp(20px, 4vw, 56px);
+  --page-title-size: clamp(4.6rem, 7vw, 7.25rem);
   --display: "Sora", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   --headline: "Cal Sans", var(--display);
   --mono: "JetBrains Mono", "SFMono-Regular", Consolas, monospace;
@@ -292,7 +293,7 @@ dd {
   width: 100%;
   max-width: 1050px;
   font-family: var(--headline);
-  font-size: clamp(4.2rem, 10vw, 10rem);
+  font-size: var(--page-title-size);
   font-weight: 400;
   letter-spacing: -0.045em;
   line-height: 0.92;
@@ -375,7 +376,6 @@ dd {
 
 .hero-home h1 {
   max-width: 1180px;
-  font-size: clamp(4.6rem, 7vw, 7.25rem);
   line-height: 0.94;
 }
 
@@ -544,7 +544,6 @@ h3 {
 
 .contact-heading h1 {
   max-width: 720px;
-  font-size: clamp(4rem, 8.4vw, 10rem);
 }
 
 .return-link,
@@ -624,12 +623,15 @@ h3 {
 }
 
 @media (max-width: 1280px) {
+  :root {
+    --page-title-size: clamp(4rem, 6.7vw, 6rem);
+  }
+
   .hero-home {
     padding-top: clamp(36px, 6vh, 58px);
   }
 
   .hero-home h1 {
-    font-size: clamp(4rem, 6.7vw, 6rem);
     max-width: 980px;
   }
 
@@ -719,6 +721,10 @@ h3 {
 }
 
 @media (max-width: 700px) {
+  :root {
+    --page-title-size: clamp(3.25rem, 14.5vw, 5.4rem);
+  }
+
   .site-header {
     position: sticky;
     align-items: center;
@@ -767,15 +773,7 @@ h3 {
     width: 160px;
   }
 
-  .hero h1,
-  .services > .section-intro h1,
-  .approach h2,
-  .contact-heading h1 {
-    font-size: clamp(3.4rem, 18vw, 6.5rem);
-  }
-
   .hero-home h1 {
-    font-size: clamp(3.25rem, 14.5vw, 5.4rem);
     line-height: 0.96;
   }
 
@@ -811,6 +809,10 @@ h3 {
 }
 
 @media (max-width: 460px) {
+  :root {
+    --page-title-size: clamp(3.05rem, 14vw, 4.4rem);
+  }
+
   .site-header {
     align-items: center;
   }
@@ -834,10 +836,6 @@ h3 {
 
   .hero-home {
     padding-top: 36px;
-  }
-
-  .hero-home h1 {
-    font-size: clamp(3.05rem, 14vw, 4.4rem);
   }
 
   .hero-home .lead {
