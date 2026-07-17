@@ -50,6 +50,9 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
   revealItems.forEach((item) => revealObserver.observe(item));
 
   document.querySelectorAll(".asterisk").forEach((asterisk) => {
+    let spinRampFrame;
+    let spinIsPrimed = false;
+
     const setSpinSpeed = (speed) => {
       asterisk.getAnimations().forEach((animation) => {
         if (animation.animationName?.startsWith("asterisk-spin")) {
@@ -58,12 +61,42 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       });
     };
 
+    const easeInOut = (progress) => -(Math.cos(Math.PI * progress) - 1) / 2;
+
+    const triggerSpinRamp = () => {
+      const duration = 500;
+      const maxSpeed = 80;
+      const startTime = performance.now();
+
+      window.cancelAnimationFrame(spinRampFrame);
+
+      const tick = (now) => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const wave = Math.sin(easeInOut(progress) * Math.PI);
+        setSpinSpeed(1 + (maxSpeed - 1) * wave);
+
+        if (progress < 1) {
+          spinRampFrame = window.requestAnimationFrame(tick);
+          return;
+        }
+
+        setSpinSpeed(1);
+      };
+
+      spinRampFrame = window.requestAnimationFrame(tick);
+    };
+
     asterisk.addEventListener("pointerenter", () => {
-      setSpinSpeed(12);
+      if (spinIsPrimed) {
+        return;
+      }
+
+      spinIsPrimed = true;
+      triggerSpinRamp();
     });
 
     asterisk.addEventListener("pointerleave", () => {
-      setSpinSpeed(1);
+      spinIsPrimed = false;
     });
   });
 }
