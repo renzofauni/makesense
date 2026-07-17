@@ -288,8 +288,7 @@ dd {
 
 .hero h1,
 .services > .section-intro h1,
-.approach h2,
-.contact-heading h1 {
+.approach h2 {
   width: 100%;
   max-width: 1050px;
   font-family: var(--headline);
@@ -302,8 +301,7 @@ dd {
 
 .hero h1 span,
 .services > .section-intro h1 span,
-.approach h2 span,
-.contact-heading h1 span {
+.approach h2 span {
   color: var(--sage);
 }
 
@@ -527,42 +525,8 @@ h3 {
 }
 
 .contact-page {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(320px, 480px);
-  gap: 70px;
   min-height: calc(100svh - 239px);
-  align-items: start;
   padding: 148px var(--page-pad) 150px;
-}
-
-.contact-heading {
-  display: flex;
-  min-width: 0;
-  flex-direction: column;
-  gap: 70px;
-}
-
-.contact-heading h1 {
-  max-width: 720px;
-}
-
-.return-link,
-.email-label {
-  color: var(--muted);
-  font-family: var(--mono);
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-  line-height: 1.5;
-  text-transform: uppercase;
-}
-
-.return-link {
-  width: fit-content;
-}
-
-.return-link:hover {
-  color: var(--sage);
 }
 
 .email-panel {
@@ -570,8 +534,7 @@ h3 {
   flex-direction: column;
   align-items: flex-start;
   gap: 22px;
-  width: 100%;
-  padding-top: 12px;
+  max-width: 760px;
 }
 
 .email-address {
@@ -700,13 +663,8 @@ h3 {
   }
 
   .contact-page {
-    grid-template-columns: 1fr;
     min-height: auto;
     padding-top: 92px;
-  }
-
-  .contact-heading {
-    gap: 42px;
   }
 }
 
