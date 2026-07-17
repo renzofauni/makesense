@@ -26,12 +26,38 @@ html {
 }
 
 body {
+  position: relative;
   margin: 0;
   color: var(--ink);
-  background: var(--paper);
+  background:
+    radial-gradient(circle at 18% 16%, rgba(255, 255, 255, 0.76), transparent 31%),
+    radial-gradient(circle at 83% 13%, rgba(82, 122, 122, 0.055), transparent 27%),
+    radial-gradient(circle at 54% 72%, rgba(255, 255, 255, 0.38), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.36), rgba(222, 235, 233, 0.18) 48%, rgba(255, 255, 255, 0.3)),
+    var(--paper);
   font-family: var(--display);
   line-height: 1.5;
   overflow-x: hidden;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  z-index: 0;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 18% 32%, rgba(16, 29, 29, 0.095) 0 0.5px, transparent 0.86px),
+    radial-gradient(circle at 78% 12%, rgba(255, 255, 255, 0.84) 0 0.54px, transparent 0.92px),
+    radial-gradient(circle at 42% 84%, rgba(82, 122, 122, 0.085) 0 0.46px, transparent 0.82px);
+  background-size: 13px 13px, 19px 19px, 27px 27px;
+  opacity: 0.38;
+  mix-blend-mode: multiply;
+}
+
+body > * {
+  position: relative;
+  z-index: 1;
 }
 
 body::selection {
@@ -879,7 +905,14 @@ h3 {
 
   .actions,
   .actions .pill {
+    max-width: 100%;
     width: 100%;
+  }
+
+  .lead,
+  .hero-copy,
+  .hero-home .hero-grid {
+    max-width: 100%;
   }
 
   .hero-facts {
